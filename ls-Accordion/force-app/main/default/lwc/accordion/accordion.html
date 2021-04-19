@@ -1,0 +1,69 @@
+<template>
+
+    <!-- The main containing div. Everything is inside here. -->
+    <div class={containerStyle} role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+    aria-describedby="modal-content-id-1">
+
+        <div class="ls-accordian__container">
+
+            <!-- Titles, subtitles and dropdown container -->
+            <div class={headerStyle} onclick={toggle} onkeydown={toggle} tabindex="0">
+
+                <!-- Title -->
+                <div class="ls-accordian__title__container slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                    
+                    <span class="ls-accordian__title" tabindex="0">{title}</span>
+                
+                </div>
+
+                <!-- Subtitle One -->
+                <div class="ls-accordian__subtitle slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+
+                    <div class="ls-accordian__subtitle__container" tabindex="0">
+
+                        <span class="ls-accordian__subtitle__title">{subtitleOneLabel} </span>
+
+                        <span class="ls-accordian__subtitle__label">{subtitleOneValue}</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Subtitle Two -->
+                <div class="ls-accordian__subtitle slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+
+                    <div class="ls-accordian__subtitle__container" tabindex="0">
+
+                        <span class="ls-accordian__subtitle__title">{subtitleTwoLabel} </span>
+
+                        <span class="ls-accordian__subtitle__label">{subtitleTwoValue} </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Dropdown Arrow -->
+                <div if:false={forceOpen} tabindex="0" class="ls-accordian__dropdown-arrow">
+
+                    <lightning-icon class={utilityIconColour} size="xx-small" icon-name={utilityIcon}></lightning-icon>
+
+                </div>
+
+            </div>
+
+            <!-- Where the content of the accordian lives. -->
+            <div class="ls-accordian__content">
+
+                <template if:false={closed}>
+
+                    <slot></slot>
+
+                </template>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</template>

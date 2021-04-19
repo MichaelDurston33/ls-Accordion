@@ -1,0 +1,163 @@
+.ls-accordian {
+
+    position: relative;
+
+}
+
+.ls-accordian__container {
+
+    width: 100%;
+    padding: 0px;
+    overflow: hidden;
+
+}
+
+.ls-accordian__header {
+
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+
+}
+
+/* The dropdown arrow is position: absolute because it should always appear at 
+    the edge of the container regardless of content.  */
+.ls-accordian__dropdown-arrow {
+
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+/* Uses styling hooks to change dropdown icon on open/closed  */
+.ls-dropdown-closed-brand {
+
+    --sds-c-icon-color-foreground-default: #1825AA; 
+    --sds-c-icon-color-foreground: #1825AA;
+
+}
+
+.ls-dropdown-open-neutral {
+
+    --sds-c-icon-color-foreground-default: white; 
+    --sds-c-icon-color-foreground: white;
+
+}
+
+.ls-accordian__subtitle__container, .ls-accordian__title-container {
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.ls-accordian__subtitle__title {
+
+    font-weight: bold;
+    
+}
+
+.ls-accordian__container .ls-accordian__closed {
+    
+    background-color: #ffffff;
+    color: #1825AA;
+    border-bottom: 2px solid #f3f4fb;
+
+}
+
+.ls-accordian__container .ls-accordian__open {
+
+    background-color: #1825AA;
+    color: #ffffff;
+
+}
+
+.ls-accordian__container .ls-accordian__header {
+
+    border-radius: 0px;
+    font-size: 12px;
+
+}
+
+.ls-accordian__container .ls-accordian__title__container {
+
+    height: 34px;
+
+}
+
+.ls-accordian__container .ls-accordian__title {
+
+    font-size: 20px;
+
+}
+
+.ls-accordian__container .ls-accordian__subtitle {
+
+    position: relative;
+    height: 27px;
+
+}
+
+/* On Small screens, the titles collapse and the accordion height becomes taller */
+@media (min-width: 48em) {
+
+    .ls-accordian__container .ls-accordian__title__container {
+
+        height: 40px;
+
+    }
+
+    .ls-accordian__container .ls-accordian__subtitle {
+
+        height: 40px;
+
+    }
+
+    .ls-accordian__container .ls-accordian__header {
+
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        font-size: 14px;
+
+    }
+
+    .ls-accordian__container .ls-accordian__closed {
+
+        border-bottom: 0px;
+
+    }
+
+}
+
+@media (min-width: 64em) {
+
+    .ls-accordian__container .ls-accordian__title {
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+}
+
+.ls-accordian__content {
+
+    height: auto;
+
+}
+
+.ls-accordian__container .ls-accordian__title {
+    
+    font-family: "Averta-Semibold", Arial, Helvetica, sans-serif;
+
+}
+
+.cursor-pointer {
+
+    cursor: pointer;
+
+}
